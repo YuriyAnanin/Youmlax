@@ -1,5 +1,5 @@
 import { Formik } from "formik";
-import { BaseInput } from "../../UI/BaseInput";
+import { BaseInput } from "../../UI/components/base-input/BaseInput";
 import ForgetBg from "../../../media/images/forget-bg.png";
 
 export const ForgetPage = () => {

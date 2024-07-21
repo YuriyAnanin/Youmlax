@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { ReactNode } from "react";
-import { ReactComponent as Eye } from "../../media/icons/eye.svg";
+import { ReactComponent as Eye } from "../../../../media/icons/eye.svg";
 
 type Props = {
 	className?: string;

@@ -6,7 +6,7 @@ export const BaseLayout = () => {
 	return (
 		<main className="flex pt-5 px-6">
 			<Sidebar />
-			<section>
+			<section className="w-full ml-8">
 				<Header />
 				<Outlet />
 			</section>

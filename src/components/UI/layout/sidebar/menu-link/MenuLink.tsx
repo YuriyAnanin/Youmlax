@@ -8,6 +8,7 @@ type Props = {
 	active?: boolean;
 	children: ReactElement | string;
 	className?: string;
+	disabled?: boolean;
 };
 
 export const MenuLink: FC<Props> = ({
@@ -16,6 +17,7 @@ export const MenuLink: FC<Props> = ({
 	active,
 	children,
 	className,
+	disabled,
 }) => {
 	const navigate = useNavigate();
 	const location = useLocation();
@@ -24,8 +26,10 @@ export const MenuLink: FC<Props> = ({
 	return (
 		<button
 			onClick={() => navigate(href)}
+			disabled={disabled}
 			className={clsx(
-				"text-base py-2 px-3 hover:bg-dark hover:text-white transition rounded-xl",
+				"text-base py-2 px-3 transition rounded-xl text-left w-full",
+				!disabled && "hover:bg-dark hover:text-white",
 				currentPath === href || active
 					? "text-white font-bold bg-dark rounded-lg"
 					: "text-text",

@@ -17,7 +17,7 @@ export const IndexPage = () => {
 				<Formik
 					initialValues={{ name: "jared" }}
 					onSubmit={(values, actions) => {
-						navigate("/statistic");
+						navigate("/employees");
 					}}
 				>
 					{(props) => (
@@ -36,6 +36,7 @@ export const IndexPage = () => {
 								Пароль
 								<BaseInput
 									type="password"
+									variant="password"
 									name="userPassword"
 									id="userPassword"
 									placeholder="Введите пароль здесь"

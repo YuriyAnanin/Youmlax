@@ -59,6 +59,7 @@ export const RegistrationPage = () => {
 								Пароль
 								<BaseInput
 									type="password"
+									variant="password"
 									name="userPassword"
 									id="userPassword"
 									placeholder="Введите пароль здесь"

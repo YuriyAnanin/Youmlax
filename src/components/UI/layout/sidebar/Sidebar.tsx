@@ -1,6 +1,4 @@
 import { ReactComponent as Logo } from "../../../../media/icons/logo-main.svg";
-import { ReactComponent as Profile } from "../../../../media/icons/profile.svg";
-import { ReactComponent as Settings } from "../../../../media/icons/settings.svg";
 import { MenuLink } from "./menu-link/MenuLink";
 
 export const Sidebar = () => {
@@ -15,16 +13,13 @@ export const Sidebar = () => {
 						<h4 className="text-text text-xs font-bold">Меню</h4>
 						<ul className="mt-2 space-y-6">
 							<li>
-								<MenuLink href="/statistic">Статистика</MenuLink>
+								<MenuLink href="/employees">Сотрудники</MenuLink>
 							</li>
 							<li>
-								<MenuLink href="/education">Мое обучение</MenuLink>
+								<MenuLink href="/chat">Ожидает проверки</MenuLink>
 							</li>
 							<li>
-								<MenuLink href="/library">Библиотека</MenuLink>
-							</li>
-							<li>
-								<MenuLink href="/my-courses">Мои курсы</MenuLink>
+								<MenuLink href="/courses">Курсы</MenuLink>
 							</li>
 						</ul>
 					</li>
@@ -32,20 +27,10 @@ export const Sidebar = () => {
 						<h4 className="text-text text-xs font-bold">Аккаунт</h4>
 						<ul className="mt-2 space-y-6">
 							<li>
-								<MenuLink href="/profile">
-									<span className="flex">
-										<Profile className="mr-2" />
-										Профиль
-									</span>
-								</MenuLink>
+								<MenuLink href="/profile">Профиль</MenuLink>
 							</li>
 							<li>
-								<MenuLink href="/settings">
-									<span className="flex">
-										<Settings className="mr-2" />
-										Настройки
-									</span>
-								</MenuLink>
+								<MenuLink href="/settings">Настройки</MenuLink>
 							</li>
 						</ul>
 					</li>
@@ -56,7 +41,7 @@ export const Sidebar = () => {
 				<p className="text-xs text-text">
 					Обновите свой план сегодня, чтобы открыть мир расширенных функций
 				</p>
-				<MenuLink href="/tariffs" active className="hover:bg-opacity-90">
+				<MenuLink href="/tariffs" active disabled>
 					Посмотреть планы
 				</MenuLink>
 			</div>

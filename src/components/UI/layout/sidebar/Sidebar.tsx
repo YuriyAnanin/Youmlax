@@ -3,7 +3,7 @@ import { MenuLink } from "./menu-link/MenuLink";
 
 export const Sidebar = () => {
 	return (
-		<div className="space-y-7 max-w-[212px]">
+		<div className="space-y-7 max-w-[250px]">
 			<div className="bg-white rounded-md py-2 px-3">
 				<Logo />
 			</div>

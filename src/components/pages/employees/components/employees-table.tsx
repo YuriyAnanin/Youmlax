@@ -1,67 +1,107 @@
 import clsx from "clsx";
 import UserImg from "../../../../media/images/profile.jpg";
+import { EmployeesTableRow } from "./employees-table-row";
 
 type Props = {
 	tableClassName?: string;
 };
 
+const UsersData = [
+	{
+		userId: 123,
+		userName: "Angela Vatiga",
+		userEmail: "an@gmail.com",
+		userPosition: "Дизайнер",
+		userImg: UserImg,
+		monthlyActivity: "1.4 ч",
+		awaitingTasksCount: 4,
+		finishedExercisesCount: 2,
+		userCourses: [
+			{
+				courseName: "Дизайн моб. приложений",
+				courseProgress: {
+					finishedExercisesCount: 5,
+					allExercisesCount: 16,
+				},
+			},
+			{
+				courseName: "Основы графики",
+				courseProgress: {
+					finishedExercisesCount: 5,
+					allExercisesCount: 6,
+				},
+			},
+			{
+				courseName: "Как составлять тз",
+				courseProgress: {
+					finishedExercisesCount: 2,
+					allExercisesCount: 26,
+				},
+			},
+		],
+	},
+
+	{
+		userId: 123,
+		userName: "Angela Vatiga",
+		userEmail: "an@gmail.com",
+		userPosition: "Дизайнер",
+		userImg: UserImg,
+		monthlyActivity: "1.4 ч",
+		awaitingTasksCount: 4,
+		finishedExercisesCount: 2,
+		userCourses: [
+			{
+				courseName: "Дизайн моб. приложений",
+				courseProgress: {
+					finishedExercisesCount: 5,
+					allExercisesCount: 16,
+				},
+			},
+			{
+				courseName: "Основы графики",
+				courseProgress: {
+					finishedExercisesCount: 5,
+					allExercisesCount: 6,
+				},
+			},
+			{
+				courseName: "Как составлять тз",
+				courseProgress: {
+					finishedExercisesCount: 2,
+					allExercisesCount: 26,
+				},
+			},
+		],
+	},
+];
+
 export const EmployeesTable = ({ tableClassName }: Props) => {
 	const tableHeaderGrid =
-		"grid grid-cols-[224px_150px_160px_250px_160px] space-x-4";
-	const tableBodyGrid = "grid grid-cols-[224px_150px_160px_360px]";
+		"grid grid-cols-[208px_190px_180px_250px_250px] gap-x-4";
 
 	return (
 		<div className={clsx(tableClassName)}>
-			<ul className={clsx(tableHeaderGrid, "px-4 text-lg font-extrabold")}>
-				<li>Имя</li>
-				<li>Должность</li>
-				<li className="text-center">Почта</li>
-				<li className="text-center">Текущее обучение</li>
-				<li className="text-center">Прогресс</li>
-			</ul>
-			<ul
-				className={clsx(
-					"mt-3 bg-white rounded-2xl px-4 py-5 border border-gray-border",
-					tableBodyGrid
-				)}
-			>
-				<li className="border-r border-gray-border">
-					<div className="flex items-center pb-4 pr-7 border-b border-gray-border h-[67px]">
-						<img
-							src={UserImg}
-							className="w-[56px] h-[56px] rounded-full"
-							alt="user"
-						/>
-						<div className="ml-3">
-							<p className="text-lg font-extrabold">Angela Vatiga</p>
-							<p className="mt-[5px] text-green font-medium">Id - 123</p>
-						</div>
-					</div>
-					<div className="flex items-center pr-7 mt-[14px] pl-4">
-						<p>Среднемесячная ежедневная активность</p>
-						<p className="ml-3 font-medium text-2xl flex-shrink-0">1.4 ч</p>
-					</div>
-				</li>
-				<li className="border-r border-gray-border">
-					<div className="px-7 border-b border-gray-border h-[67px]">
-						<p className="text-lg font-extrabold">Дизайнер</p>
-					</div>
-					<div className="flex items-center px-7 mt-[14px]">
-						<p>Задания ожидающие проверки </p>
-						<p className="ml-3 font-medium text-2xl flex-shrink-0">4</p>
-					</div>
-				</li>
-				<li className="border-r border-gray-border">
-					<div className="px-7 border-b border-gray-border h-[67px]">
-						<p className="text-lg font-extrabold">an@gmail.com</p>
-					</div>
-					<div className="flex items-center px-7 mt-[14px]">
-						<p>Количество завершенных курсов</p>
-						<p className="ml-3 font-medium text-2xl flex-shrink-0">4</p>
-					</div>
-				</li>
-				<li className="text-center">Текущее обучение</li>
-			</ul>
+			<div className={clsx(tableHeaderGrid, "px-4 text-lg font-extrabold")}>
+				<div>Имя</div>
+				<div className="text-center">Должность</div>
+				<div className="text-center">Почта</div>
+				<div className="text-center">Текущее обучение</div>
+				<div className="text-center">Прогресс</div>
+			</div>
+			{UsersData.map((User) => (
+				<EmployeesTableRow
+					userId={User.userId}
+					userName={User.userName}
+					userEmail={User.userEmail}
+					userPosition={User.userPosition}
+					userImg={User.userImg}
+					monthlyActivity={User.monthlyActivity}
+					awaitingTasksCount={User.awaitingTasksCount}
+					finishedExercisesCount={User.finishedExercisesCount}
+					userCourses={User.userCourses}
+				/>
+			))}
 		</div>
 	);
 };

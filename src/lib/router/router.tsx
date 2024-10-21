@@ -4,7 +4,7 @@ import { ForgetPage } from "../../components/pages/forget-page/ForgetPage";
 import { BaseLayout } from "../../components/UI/layout/base-layout/BaseLayout";
 import { IndexPage } from "../../components/pages/index-page/IndexPage";
 import { ChatPage } from "../../components/pages/chat/ChatPage";
-import { CoursesPage } from "../../components/pages/courses/CoursesPage";
+import { MentorCoursesPage } from "../../components/pages/mentor-courses/MentorCoursesPage";
 import { EmployeesPage } from "../../components/pages/employees/EmployeesPage";
 import { SettingsPage } from "../../components/pages/settings/SettingsPage";
 import { ProfilePage } from "../../components/pages/profile/ProfilePage";
@@ -19,7 +19,7 @@ export const SiteRouter = () => {
 				<Route element={<BaseLayout />}>
 					<Route path="/employees" element={<EmployeesPage />} />
 					<Route path="/chat" element={<ChatPage />} />
-					<Route path="/courses" element={<CoursesPage />} />
+					<Route path="/courses" element={<MentorCoursesPage />} />
 					<Route path="/profile" element={<ProfilePage />} />
 					<Route path="/settings" element={<SettingsPage />} />
 				</Route>

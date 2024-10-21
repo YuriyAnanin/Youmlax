@@ -1,4 +1,3 @@
-import { Formik } from "formik";
 import StudentBg from "../../../media/images/student.png";
 import MentorBg from "../../../media/images/mentor.png";
 import { useNavigate } from "react-router-dom";

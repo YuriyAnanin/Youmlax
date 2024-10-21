@@ -8,11 +8,11 @@ export const IndexPage = () => {
 	const navigate = useNavigate();
 
 	return (
-		<div className="flex py-7 items-center ml-[129px]">
+		<div className="flex py-7 items-center h-[100vh] ml-[129px]">
 			<div className="mt-8 w-full max-w-[434px]">
 				<h1 className="text-[42px] text-dark font-bold">Добро пожаловать!</h1>
-				<p className="text-xs text-text">
-					Легко и просто проходите обучение и создавайте его для других
+				<p className="text-xl text-dark">
+					С возвращением! Войдите в свою учетную запись, чтобы продолжить работу
 				</p>
 				<Formik
 					initialValues={{ name: "jared" }}
@@ -21,7 +21,7 @@ export const IndexPage = () => {
 					}}
 				>
 					{(props) => (
-						<form onSubmit={props.handleSubmit}>
+						<form onSubmit={props.handleSubmit} className="mt-8">
 							<label className="block font-bold text-base text-dark">
 								Имя пользователя
 								<BaseInput
@@ -46,12 +46,12 @@ export const IndexPage = () => {
 								onClick={() => navigate("/forget")}
 								className="text-base text-dark mt-6 block hover:text-text"
 							>
-								Забыли пароль
+								Забыли пароль?
 							</button>
 							<div className="mt-8 flex space-x-4">
 								<button
 									type="submit"
-									className="h-16 rounded-xl bg-text text-[#fff] font-bold w-full transition hover:bg-dark"
+									className="h-16 rounded-xl bg-dark text-[#fff] font-bold w-full transition hover:bg-opacity-80"
 								>
 									Войти
 								</button>

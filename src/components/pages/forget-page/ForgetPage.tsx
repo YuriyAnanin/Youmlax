@@ -4,11 +4,11 @@ import ForgetBg from "../../../media/images/forget-bg.png";
 
 export const ForgetPage = () => {
 	return (
-		<div className="flex py-7 items-center ml-[129px]">
+		<div className="flex py-7 items-center ml-[129px] h-[100vh]">
 			<div>
 				<h1 className="text-[42px] text-dark font-bold">Забыли пароль</h1>
 				<p className="text-xs text-text">
-					Легко и просто проходите обучение и создавайте его для других
+					Введите вашу почту, на неё придет ссылка для восстановления пароля
 				</p>
 				<Formik
 					initialValues={{ name: "jared" }}
@@ -37,7 +37,7 @@ export const ForgetPage = () => {
 							<div className="mt-8 flex">
 								<button
 									type="submit"
-									className="h-16 rounded-xl bg-text text-[#fff] font-bold w-full transition hover:bg-dark"
+									className="h-16 rounded-xl bg-dark text-[#fff] font-bold w-full transition hover:bg-opacity-80"
 								>
 									Сбросить пароль
 								</button>

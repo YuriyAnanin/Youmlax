@@ -1,40 +1,31 @@
 import { Formik } from "formik";
 import { BaseInput } from "../../UI/components/base-input/BaseInput";
 import { ReactComponent as Google } from "../../../media/icons/google-auth.svg";
-import RegistrationBg from "../../../media/images/reg-corp-bg.png";
+import InviteBg from "../../../media/images/reg-bg.png";
 import { useNavigate } from "react-router-dom";
 
-export const RegistrationPage = () => {
+export const InvitePage = () => {
 	const navigate = useNavigate();
 
 	return (
 		<div className="flex py-7 items-center ml-[129px]">
-			<div className="mt-8 w-full max-w-[434px]">
+			<div className="max-w-[624px]">
 				<h1 className="text-[42px] text-dark font-bold">Регистрация</h1>
-				<p className="text-xs text-text">
-					Легко и просто проходите обучение и создавайте его для других
+				<p className="text-xl text-dark">
+					Вас пригласили в систему обучения в компанию ХХ, заполните информацию
+					о себе, чтобы начать ваше обучение
 				</p>
+				<img src={InviteBg} alt="" className="mt-8 max-w-[527px]" />
+			</div>
+			<div className="mt-8 w-full max-w-[434px] ml-[150px]">
 				<Formik
 					initialValues={{ name: "jared" }}
 					onSubmit={(values, actions) => {
-						setTimeout(() => {
-							alert(JSON.stringify(values, null, 2));
-							actions.setSubmitting(false);
-						}, 1000);
+						navigate("/select-profile");
 					}}
 				>
 					{(props) => (
 						<form onSubmit={props.handleSubmit} className="mt-8">
-							<label className="block font-bold text-base text-dark">
-								Имя пользователя/Название компании
-								<BaseInput
-									type="text"
-									name="userLogin"
-									id="userLogin"
-									className="mt-2"
-									placeholder="Введите"
-								/>
-							</label>
 							<label className="block font-bold text-base text-dark mt-8">
 								Email
 								<BaseInput
@@ -42,7 +33,7 @@ export const RegistrationPage = () => {
 									name="userEmail"
 									id="userEmail"
 									className="mt-2"
-									placeholder="Введите свой Email"
+									placeholder="Введите свою почту"
 								/>
 							</label>
 							<label className="block font-bold text-base text-dark mt-8">
@@ -55,6 +46,26 @@ export const RegistrationPage = () => {
 									placeholder="Введите свой номер телефона"
 								/>
 							</label>
+							<label className="block font-bold text-base text-dark">
+								Имя
+								<BaseInput
+									type="text"
+									name="userName"
+									id="userName"
+									className="mt-2"
+									placeholder="Введите ваше имя"
+								/>
+							</label>
+							<label className="block font-bold text-base text-dark">
+								Фамилия
+								<BaseInput
+									type="text"
+									name="userSurname"
+									id="userSurname"
+									className="mt-2"
+									placeholder="Введите вашу фамилию"
+								/>
+							</label>
 							<label className="block font-bold text-base text-dark mt-8">
 								Пароль
 								<BaseInput
@@ -62,7 +73,7 @@ export const RegistrationPage = () => {
 									variant="password"
 									name="userPassword"
 									id="userPassword"
-									placeholder="Введите пароль здесь"
+									placeholder="Придумайте пароль"
 								/>
 							</label>
 							<div className="mt-8 flex space-x-4">
@@ -80,7 +91,7 @@ export const RegistrationPage = () => {
 						</form>
 					)}
 				</Formik>
-				<p className="text-base text-text mt-4">
+				<p className="text-base text-center text-text mt-4">
 					Уже есть аккаунт?&nbsp;
 					<button
 						onClick={() => navigate("/")}
@@ -89,9 +100,6 @@ export const RegistrationPage = () => {
 						Войти сейчас
 					</button>
 				</p>
-			</div>
-			<div className="ml-[150px]">
-				<img src={RegistrationBg} alt="" />
 			</div>
 		</div>
 	);

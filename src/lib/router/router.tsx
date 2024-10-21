@@ -8,6 +8,8 @@ import { CoursesPage } from "../../components/pages/courses/CoursesPage";
 import { EmployeesPage } from "../../components/pages/employees/EmployeesPage";
 import { SettingsPage } from "../../components/pages/settings/SettingsPage";
 import { ProfilePage } from "../../components/pages/profile/ProfilePage";
+import { InvitePage } from "../../components/pages/invite-page/InvitePage";
+import { SelectProfilePage } from "../../components/pages/select-profile-page/SelectProfilePage";
 
 export const SiteRouter = () => {
 	return (
@@ -16,6 +18,8 @@ export const SiteRouter = () => {
 				<Route index element={<IndexPage />} />
 				<Route path="/registration" element={<RegistrationPage />} />
 				<Route path="/forget" element={<ForgetPage />} />
+				<Route path="/invite" element={<InvitePage />} />
+				<Route path="/select-profile" element={<SelectProfilePage />} />
 				<Route element={<BaseLayout />}>
 					<Route path="/employees" element={<EmployeesPage />} />
 					<Route path="/chat" element={<ChatPage />} />

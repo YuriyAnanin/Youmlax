@@ -6,7 +6,7 @@ type Props = {
 	isActive?: boolean;
 };
 
-export const MentorCoursesSidebarLink = ({ link, text, isActive }: Props) => {
+export const InsideSidebarRow = ({ link, text, isActive }: Props) => {
 	return (
 		<a
 			href={link}

@@ -1,6 +1,5 @@
 import { InsideSidebar } from "../../../shared/components/inside-sidebar";
-import { MentorCoursesGrid } from "./components/courses-grid";
-import { MentorCoursesHeader } from "./components/header";
+import { MyCoursesGrid } from "./components/courses-grid";
 
 const SidebarLinks = [
 	{
@@ -26,21 +25,12 @@ const SidebarLinks = [
 	},
 ];
 
-const handleAddCategory = () => {
-	alert("Hello world!");
-};
-
-export const MentorCoursesPage = () => {
+export const MyCoursesPage = () => {
 	return (
 		<section className="mt-8">
-			<MentorCoursesHeader />
 			<div className="flex space-x-7 mt-5 w-full">
-				<InsideSidebar
-					labels={SidebarLinks}
-					title="Категории"
-					handleAddLabel={handleAddCategory}
-				/>
-				<MentorCoursesGrid />
+				<InsideSidebar labels={SidebarLinks} title="Категории" />
+				<MyCoursesGrid />
 			</div>
 		</section>
 	);

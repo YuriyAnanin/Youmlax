@@ -49,30 +49,12 @@ const ActiveCourses: CourseItem[] = [
 	},
 ];
 
-const UnactiveCourses: CourseItem[] = [
-	/* {
-		image: Lesson1Img,
-		name: "Дизайн моб. приложений",
-		desc: "В этом курсе вы научитесь создавать базовые экраны мобильных приложений",
-		link: "/courses/course-1",
-		activityDays: "22 дня активности",
-		courseProgress: { finishedExercisesCount: 8, allExercisesCount: 16 },
-		courseLegend: {
-			viewsCount: 0,
-			commentsCount: 0,
-			filesCount: 0,
-		},
-		mentorData: { name: "Чуваааак", link: "/", image: MentorImg },
-	}, */
-];
-
-export const MentorCoursesGrid = () => {
+export const MyCoursesGrid = () => {
 	return (
 		<div className="space-y-6 pb-16">
 			<div className="bg-white rounded-lg p-4 w-full">
-				<h2 className="text-xl text-dark font-bold">Активные</h2>
 				{ActiveCourses.length > 0 ? (
-					<div className="mt-3 grid grid-cols-4 gap-6">
+					<div className="grid grid-cols-4 gap-6">
 						{ActiveCourses.map((course) => (
 							<CourseCard
 								image={course.image}
@@ -96,37 +78,6 @@ export const MentorCoursesGrid = () => {
 						/>
 						<h2 className="text-3xl text-[#c1c1c1] font-bold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2] w-full text-center">
 							У вас нет активных курсов
-						</h2>
-					</div>
-				)}
-			</div>
-			<div className="bg-white rounded-lg p-4 w-full">
-				<h2 className="text-xl text-dark font-bold">Неактивные</h2>
-				{UnactiveCourses.length > 0 ? (
-					<div className="mt-3 grid grid-cols-4 gap-6">
-						{UnactiveCourses.map((course) => (
-							<CourseCard
-								image={course.image}
-								name={course.name}
-								desc={course.desc}
-								link={course.link}
-								activityDays={course.activityDays || undefined}
-								passivityDays={course.passivityDays || undefined}
-								courseProgress={course.courseProgress}
-								courseLegend={course.courseLegend}
-								mentorData={course.mentorData}
-							/>
-						))}
-					</div>
-				) : (
-					<div className="h-[300px] w-full flex items-center justify-center relative">
-						<img
-							src={NotFoundBg}
-							className="h-[342px] w-[342px] rounded text-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-							alt="Курсы не найдены"
-						/>
-						<h2 className="text-3xl text-[#c1c1c1] font-bold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2] w-full text-center">
-							У вас нет неактивных курсов
 						</h2>
 					</div>
 				)}

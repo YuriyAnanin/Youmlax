@@ -17,7 +17,7 @@ export const SelectProfilePage = () => {
 					</p>
 					<img src={StudentBg} alt="" className="mt-16 h-[203px]" />
 					<button
-						onClick={() => navigate("/my-learning")}
+						onClick={() => navigate("/my-courses")}
 						className="h-16 rounded-xl bg-dark text-[#fff] font-bold w-full transition hover:bg-opacity-80 mt-7"
 					>
 						Войти как студент

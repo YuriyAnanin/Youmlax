@@ -10,6 +10,7 @@ import { SettingsPage } from "../../components/pages/settings/SettingsPage";
 import { ProfilePage } from "../../components/pages/profile/ProfilePage";
 import { InvitePage } from "../../components/pages/invite-page/InvitePage";
 import { SelectProfilePage } from "../../components/pages/select-profile-page/SelectProfilePage";
+import { MyCoursesPage } from "../../components/pages/my-courses/MyCoursesPage";
 
 export const SiteRouter = () => {
 	return (
@@ -24,6 +25,7 @@ export const SiteRouter = () => {
 					<Route path="/employees" element={<EmployeesPage />} />
 					<Route path="/chat" element={<ChatPage />} />
 					<Route path="/courses" element={<MentorCoursesPage />} />
+					<Route path="/my-courses" element={<MyCoursesPage />} />
 					<Route path="/profile" element={<ProfilePage />} />
 					<Route path="/settings" element={<SettingsPage />} />
 				</Route>
